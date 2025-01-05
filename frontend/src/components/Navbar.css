@@ -1,0 +1,146 @@
+/* Header Styling */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    padding: 20px 50px;
+    background-color: rgb(209, 134, 28);
+    box-shadow: 0 2px 10px rgba(13, 4, 4, 0.1);
+    font-family: 'Arial', sans-serif;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 28px;
+    font-weight: bolder;
+    color: #010101;
+    text-shadow: 1px 1px 2px #fbfbfb;
+}
+
+.logo img {
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+/* Navbar Links Styling */
+.nav-links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+.nav-links a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #d4a358;
+}
+
+/* Dropdown Menu Styling */
+.dropdown {
+    position: relative;
+}
+
+.dropdown a {
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    padding: 10px;
+    list-style: none;
+    min-width: 200px;
+    z-index: 1000;
+}
+
+/* Dropdown Show when clicked */
+.dropdown-content.show {
+    display: block;
+}
+
+.dropdown-content li {
+    padding: 10px;
+}
+
+.dropdown-content a {
+    color: #333;
+    font-size: 16px;
+    padding: 8px;
+    display: block;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background: #d4a358;
+    color: white;
+}
+
+/* Hamburger Menu Styling */
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.hamburger svg {
+    width: 30px;
+    height: 30px;
+    color: white;
+}
+
+/* Mobile Menu Styling */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        text-align: right;
+        width: 100%;
+        padding-top: 10px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    /* Dropdown for Mobile */
+    .dropdown-content {
+        position: static;
+        box-shadow: none;
+        display: none;
+        padding: 0;
+    }
+
+    .dropdown-content.show {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
