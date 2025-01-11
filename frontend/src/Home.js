@@ -9,25 +9,74 @@ function Home() {
         date: '',
         time: '',
         service: '',
+        lawyer: '',
     });
 
     const [error, setError] = useState('');
 
-    const handleInputChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
+    // Define available lawyers based on services
+    const lawyersByService = {
+        "Criminal Law": ["Mrs. Samanthi","Mr.Nimesh","Mr.Herath"],
+        "Family Law": ["Mr.Samarawikrama","Mrs.wijethunga","Mrs.Seananayaka","Miss.Fernando"],
+        "Corporate Law": ["Mr.krishanth","Mr.David","Mrs.weerakkodi","Mr.Thennakoon","Mr.Subash"],
+        "Other services" : ["Mrs.Dilini","Mrs.Subhodani","Mr.Sumith","Mrs.Niroshika","Mr.Dinesh","Mr.Ranathunga"],
     };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        const { name, email, date, time, service } = formData;
-        if (!name || !email || !date || !time || service === 'Select a Service') {
-            setError('Please fill in all fields correctly.');
-        } else {
-            alert('Appointment Scheduled Successfully!');
-            setError('');
+    const handleInputChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+
+        // Reset lawyer selection if service changes
+        if (e.target.name === "service") {
+            setFormData({ ...formData, service: e.target.value, lawyer: '' });
         }
     };
-     
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const { name, email, date, time, service, lawyer } = formData;
+    
+        if (!name || !email || !date || !time || service === 'Select a Service' || lawyer === '') {
+            setError('Please fill in all fields correctly.');
+            return;
+        }
+    
+        try {
+            const response = await fetch('http://localhost:8081/appointments', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    name,
+                    email,
+                    date,
+                    time,
+                    lawType: service,
+                    lawyer,
+                }),
+            });
+    
+            if (response.ok) {
+                alert(`Appointment Scheduled Successfully with ${lawyer} for ${service}!`);
+                setError('');
+                setFormData({
+                    name: '',
+                    email: '',
+                    date: '',
+                    time: '',
+                    service: '',
+                    lawyer: '',
+                });
+            } else {
+                const errorData = await response.json();
+                setError(`Failed to schedule appointment: ${errorData.message}`);
+            }
+        } catch (error) {
+            setError(`An error occurred: ${error.message}`);
+        }
+    };
+    
+
     return (
         <div className="home">
             <Navbar />
@@ -86,11 +135,27 @@ function Home() {
                                 onChange={handleInputChange}
                                 required
                             >
-                                <option>Select a Service</option>
+                                <option value="">Select a Service</option>
                                 <option>Criminal Law</option>
                                 <option>Family Law</option>
                                 <option>Corporate Law</option>
                             </select>
+                            {/* Show Lawyer dropdown based on selected service */}
+                            {formData.service && (
+                                <select
+                                    name="lawyer"
+                                    value={formData.lawyer}
+                                    onChange={handleInputChange}
+                                    required
+                                >
+                                    <option value="">Select a Lawyer</option>
+                                    {lawyersByService[formData.service]?.map((lawyer, index) => (
+                                        <option key={index} value={lawyer}>
+                                            {lawyer}
+                                        </option>
+                                    ))}
+                                </select>
+                            )}
                             <button type="submit" className="submit-button">
                                 Get An Appointment
                             </button>
@@ -98,13 +163,12 @@ function Home() {
                     </div>
                 </section>
 
-                {/* Footer Section with multiple columns */}
+                {/* Footer Section */}
                 <footer className="footer">
                     <div className="footer-container">
-                        {/* Contact Info Section */}
                         <div className="footer-column">
                             <h3>Our Office</h3>
-                            <p>Location, City, Country</p>
+                            <p>123 Main Street, City, Country</p>
                         </div>
                         <div className="footer-column">
                             <h3>Email Us</h3>
@@ -115,8 +179,6 @@ function Home() {
                             <p>+012 345 6789</p>
                         </div>
                     </div>
-
-                    {/* Links Section */}
                     <div className="footer-links">
                         <div className="footer-column">
                             <h3>Popular Links</h3>
@@ -128,7 +190,6 @@ function Home() {
                                 <li>Contact</li>
                             </ul>
                         </div>
-
                         <div className="footer-column">
                             <h3>Quick Links</h3>
                             <ul>
@@ -139,11 +200,7 @@ function Home() {
                                 <li>Site Map</li>
                             </ul>
                         </div>
-
-                        
-                        
                     </div>
-
                     <p className="footer-bottom-text">&copy; 2025 Justice. All Rights Reserved.</p>
                 </footer>
             </main>

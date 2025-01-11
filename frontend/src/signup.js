@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import Validation from './SignupValidation';
 import axios from 'axios';
 import img6 from './assets/img6.jpg';
+import logo1 from './assets/logo1.jpg';
 
 function Signup() {
   const [values, setValues] = useState({
@@ -30,6 +31,10 @@ function Signup() {
   return (
     <div className='d-flex justify-content-center align-items-center vh-100' style={{ backgroundImage: `url(${img6})`, backgroundSize: 'cover' }}>
       <div className='bg-black p-3 rounded w-25'>
+        <div className="logo">
+          <img src={logo1} alt="LawAdmin Logo" />
+          <span style={{ color: 'white' }}>LawAdmin</span>
+        </div>
         <h2 style={{ color: 'orange' }}><strong>Sign-Up</strong></h2>
         <form action="" onSubmit={handleSubmit}>
           <div className='mb-3'>
@@ -52,7 +57,7 @@ function Signup() {
           </div>
           <button type='submit' className='btn btn-success w-100 rounded-0' style={{ backgroundColor: 'orange' }}><strong>Sign Up</strong></button>
           <p style={{ color: 'white' }}> You are agree to our terms and policies</p>
-          <Link to="/" className='btn btn-default border w-100 bg-white rounded-0 text-decoration-none' style={{ color: 'black' }}>Login</Link>
+          <Link to="/login" className='btn btn-default border w-100 bg-white rounded-0 text-decoration-none' style={{ color: 'black' }}>Login</Link>
         </form>
       </div>
     </div>

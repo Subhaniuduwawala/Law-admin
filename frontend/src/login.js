@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Validation from './LoginValidation';
 import img6 from './assets/img6.jpg';
+import logo1 from './assets/logo1.jpg';
 
 function Login() {
   const [values, setValues] = useState({
@@ -17,12 +18,15 @@ function Login() {
   };
 
   const handleSubmit = (event) => {
-    console.log("hello");
     event.preventDefault();
     axios.post('http://localhost:8081/login', values)
       .then(res => {
         if (res.status === 200) {
-          navigate('/home');
+          if(res.data.user.type === 'admin') {
+            alert("Welcome Admin");
+            // navigate("/");
+          }
+          navigate('/home'); // Ensure this path matches the home route in App.js
         } else {
           alert("No record existed");
         }
@@ -37,6 +41,10 @@ function Login() {
   return (
     <div className='d-flex justify-content-center align-items-center vh-100' style={{ backgroundImage: `url(${img6})`, backgroundSize: 'cover' }}>
       <div className='bg-black p-3 rounded w-25'>
+        <div className="logo">
+          <img src={logo1} alt="LawAdmin Logo" />
+          <span style={{ color: 'white' }}>LawAdmin</span>
+        </div>
         <h2 style={{ color: 'orange' }}><strong>Sign-In</strong></h2>
         <form action="" onSubmit={handleSubmit}>
           <div className='mb-3'>

@@ -1,0 +1,102 @@
+/* General Styling */
+.services-page {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+/* Header Section */
+.services-header {
+    text-align: center;
+    height: 110vh;
+    padding: 40px 20px;
+    background-color: rgb(209, 134, 28);
+    color: white;
+    background-size: cover; 
+    background-position: center;
+}
+
+.services-header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    margin-top: 200px;
+}
+
+.services-header p {
+    font-size: 1.2em;
+    margin-top: 0;
+}
+
+/* Service Categories */
+.services-container {
+    padding: 40px 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service-category {
+    margin-bottom: 40px;
+}
+
+.service-category h2 {
+    font-size: 2em;
+    color: rgb(209, 134, 28);
+    margin-bottom: 10px;
+}
+
+.category-description {
+    font-size: 1em;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+/* Service Items */
+.service-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.service-item {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.service-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.service-item p {
+    font-size: 1em;
+    color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .services-container {
+        padding: 20px;
+    }
+
+    .service-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+.footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9em;
+}

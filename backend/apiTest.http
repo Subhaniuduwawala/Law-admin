@@ -15,3 +15,16 @@ Content-Type: application/json
   "email": "johndoe@example.com",
   "password": "securepassword123"
 }
+
+###
+POST http://localhost:8081/appointments
+Content-Type: application/json
+
+{
+    "name": "John Doe",
+    "email": "johndoe@example.com",
+    "date": "2025-01-08",
+    "time": "10:00",
+    "lawType": "Corporate Law",
+    "lawyer": "Lawyer 1"
+}
