@@ -3,27 +3,36 @@
     font-family: Arial, sans-serif;
     background-color: #f9f9f9;
     color: #333;
+    overflow-x: hidden;
 }
 
 .attorneys-header {
     text-align: center;
     height: 90vh;
     padding: 40px 20px;
-    background-color: rgb(210, 206, 200);
-    color: rgb(255, 249, 249);
-    text-shadow: -1px -1px 0 #0d0d0c, 1px -1px 0 #181816, -1px 1px 0 #101010, 1px 1px 0 #FFD700;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .attorneys-header h1 {
     font-size: 3.5em;
     margin-bottom: 20px;
-    margin-top: 200px ;
-   
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 }
+
+
 
 .attorneys-header p {
     font-size: 1.2em;
     margin-top: 0;
+    max-width: 600px;
 }
 
 /* Category Section */
@@ -90,6 +99,85 @@
     color: #555;
     margin-bottom: 10px;
 }
+
+.cta-section {
+    background: #d4a358;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.cta-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.cta-section p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    background: #fff;
+    color: #d4a358;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+    background: #eee;
+}
+
+/* Testimonials Section */
+.testimonials-section {
+    background: #fff;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.testimonials-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+.testimonial {
+    background: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.testimonial:hover {
+    transform: translateY(-10px);
+}
+
+.testimonial p {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.testimonial h4 {
+    font-size: 1em;
+    color: #777;
+    font-weight: bold;
+}
+
 
 .footer {
     background: #222;

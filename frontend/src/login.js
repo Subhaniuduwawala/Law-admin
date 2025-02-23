@@ -4,7 +4,6 @@ import axios from 'axios';
 import Validation from './LoginValidation';
 import img6 from './assets/img6.jpg';
 import logo1 from './assets/logo1.jpg';
-
 function Login() {
   const [values, setValues] = useState({
     email: '',
@@ -22,11 +21,13 @@ function Login() {
     axios.post('http://localhost:8081/login', values)
       .then(res => {
         if (res.status === 200) {
-          if(res.data.user.type === 'admin') {
+          if (res.data.user.type === 'admin') {
             alert("Welcome Admin");
-            // navigate("/");
+            navigate('/Admin');
+          } else {
+            alert("Welcome User");
+            navigate('/home'); // Ensure this path matches the home route in App.js
           }
-          navigate('/home'); // Ensure this path matches the home route in App.js
         } else {
           alert("No record existed");
         }
@@ -37,7 +38,6 @@ function Login() {
         }
       });
   };
-
   return (
     <div className='d-flex justify-content-center align-items-center vh-100' style={{ backgroundImage: `url(${img6})`, backgroundSize: 'cover' }}>
       <div className='bg-black p-3 rounded w-25'>

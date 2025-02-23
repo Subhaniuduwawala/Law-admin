@@ -2,9 +2,14 @@ import React from 'react';
 import './ContactUs.css';
 import Navbar from './components/Navbar';
 import img31 from './assets/img31.jpg';
+import img42 from './assets/img42.jpg';
+import img43 from './assets/img43.jpg';
 import facebook from './assets/facebook.png';
 import google from './assets/google.png';
 import youtube from './assets/youtube.png';
+
+
+
 
 function ContactUs() {
     return (
@@ -20,14 +25,17 @@ function ContactUs() {
                 <section className="contact-info">
                     <h2>Get in Touch</h2>
                     <div className="info-item">
+                        
                         <h3>Our Office</h3>
                         <p>317 Darley Rd, Colombo 01000, Sri Lanka</p>
                     </div>
                     <div className="info-item">
+                       
                         <h3>Email Us</h3>
                         <p>info@lawadmin.com</p>
                     </div>
                     <div className="info-item">
+                        
                         <h3>Call Us</h3>
                         <p>+012 345 6789</p>
                     </div>
@@ -58,26 +66,71 @@ function ContactUs() {
                     ></iframe>
                 </section>
 
-                {/* Social Media Icons Section */}
-                <section className="social-media">
-                    <h2>Follow Us</h2>
-                    <div className="social-icons">
-                        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-                            <img src={facebook} alt="Facebook" />
-                        </a>
-                        <a href="https://www.google.com" target="_blank" rel="noopener noreferrer">
-                            <img src={google} alt="Google" />
-                        </a>
-                        <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
-                            <img src={youtube} alt="YouTube" />
-                        </a>
+                {/* Business Hours Section */}
+                <section className="business-hours" style={{ backgroundImage: `url(${img42})` }}>
+                    <h2>Business Hours</h2>
+                    <ul>
+                        <li>Monday - Friday: 9:00 AM - 6:00 PM</li>
+                        <li>Saturday: 10:00 AM - 4:00 PM</li>
+                        <li>Sunday: Closed</li>
+                    </ul>
+                </section>
+
+                {/* FAQ Section */}
+                <section className="faq-section" style={{ backgroundImage: `url(${img43})` }}>
+                    <h2>Frequently Asked Questions</h2>
+                    <div className="faq-item">
+                        
+                        <h3>What services do you offer?</h3>
+                        <p>We provide legal services in Criminal Law, Family Law, Corporate Law, and specialized legal needs. Contact us to learn more.</p>
+                    </div>
+                    <div className="faq-item">
+                        
+                        <h3>How can I schedule a consultation?</h3>
+                        <p>You can schedule a consultation by calling us or filling out the contact form above. We will get back to you shortly.</p>
                     </div>
                 </section>
             </main>
-            {/* Footer */}
+
             <footer className="footer">
-                <p>&copy; 2025 LawAdmin. All Rights Reserved.</p>
-            </footer>
+                    <div className="footer-container">
+                        <div className="footer-column">
+                            <h3>Our Office</h3>
+                            <p>317 Darley Rd, Colombo 01000, Sri Lanka</p>
+                        </div>
+                        <div className="footer-column">
+                            <h3>Email Us</h3>
+                            <p>info@lawadmin.com</p>
+                        </div>
+                        <div className="footer-column">
+                            <h3>Call Us</h3>
+                            <p>+012 345 6789</p>
+                        </div>
+                    </div>
+                    <div className="footer-links">
+                        <div className="footer-column">
+                            <h3>Popular Links</h3>
+                            <ul>
+                                <li>Home</li>
+                                <li>About</li>
+                                <li>Services</li>
+                                <li>Attorney</li>
+                                <li>Contact</li>
+                            </ul>
+                        </div>
+                        <div className="footer-column">
+                            <h3>Quick Links</h3>
+                            <ul>
+                                <li>FAQs</li>
+                                <li>Help</li>
+                                <li>Terms</li>
+                                <li>Privacy</li>
+                                <li>Site Map</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p className="footer-bottom-text">&copy; 2025 Justice. All Rights Reserved.</p>
+                </footer>
         </div>
     );
 }

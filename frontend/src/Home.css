@@ -10,54 +10,93 @@ body, html {
 
 /* Hero Section Styling */
 .hero {
-    position: relative;
-    height: 90vh;
-    background: url('./assets/img2.jpg') no-repeat center center;
-    background-size: cover; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+  position: relative;
+  height: 90vh;
+  overflow: hidden;
 }
 
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.3); 
-    z-index: 1;
+.hero-slide {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-image 0.8s ease-in-out;
 }
 
 .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.6); /* Dark overlay for readability */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
 }
 
 .hero-content {
-    position: relative;
-    color: #ffffff;  /* Changed to white for better readability */
-    z-index: 2;
-    max-width: 800px;
-    padding: 20px;
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  text-align: center;
 }
 
 .hero-content h2 {
-    font-size: 4rem;
-    margin-bottom: 20px;
-    text-transform: uppercase;
+  font-size: 3em;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 .hero-content p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
+  font-size: 1.3em;
+  margin-top: 0;
 }
+
+.call-button {
+  background-color: rgb(209, 134, 28);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.call-button:hover {
+  background-color: #b58f48;
+}
+
+/* Navigation Arrows */
+.prev-arrow, .next-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2em;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+  z-index: 3;
+  user-select: none;
+}
+
+.prev-arrow {
+  left: 20px;
+}
+
+.next-arrow {
+  right: 20px;
+}
+
+.prev-arrow:hover, .next-arrow:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
 
 /* Call to Action Button */
 .call-button {
@@ -74,6 +113,148 @@ body, html {
 .call-button:hover {
     background-color: #c4c1bb;
 }
+
+.lawadmin-system {
+    padding: 40px 0;
+    text-align: center;
+    background-color: #f8f8f8;
+  }
+  
+  .lawadmin-system h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #333;
+  }
+  
+  .lawadmin-steps {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .lawadmin-step {
+    flex: 1;
+    max-width: 300px;
+    margin: 10px;
+    padding: 20px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+  
+  .lawadmin-step img {
+    width: 100%;
+    height:400px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+  }
+  
+  .lawadmin-step h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .lawadmin-step p {
+    font-size: 1rem;
+    color: #666;
+  }
+
+ 
+
+  .about-lawadmin {
+    padding: 50px;
+    background: #f8f8f8;
+  }
+  
+  .about-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .about-image {
+    position: relative;
+    flex: 1;
+    max-width: 500px;
+  }
+  
+  .about-image {
+    position: relative;
+    flex: 1;
+    max-width: 500px;
+    height: 400px;
+    background-image: url('./assets/img34.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .experience-badge {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: #d4a358;
+    color: white;
+    padding: 5px 15px;
+    font-weight: bold;
+    border-radius: 4px;
+  }
+  
+  .about-content {
+    flex: 1;
+    max-width: 600px;
+  }
+  
+  .about-content h4 {
+    color: #d4a358;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .about-content h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .about-content p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: justify;
+  }
+  
+  .learn-more-button {
+    background: #d4a358;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .learn-more-button:hover {
+    background: #b58940;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .about-container {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .about-image,
+    .about-content {
+      max-width: 100%;
+    }
+  }
+  
+  
 /* Appointment Section Styling */
 .appointment-section {
     background: rgba(190, 187, 183, 0.8);
@@ -81,6 +262,8 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    gap: 40px;
 }
 
 .appointment-form {
@@ -130,8 +313,84 @@ body, html {
 .submit-button:hover {
     background: #0e0c08;
 }
+
+/* Appointments Data Grid Section */
+.appointments-grid {
+    width: 80%;
+    margin: auto;
+    overflow-x: auto;
+    margin-bottom: 50px;
+}
+
+.appointments-grid h2 {
+    font-size: 28px; 
+    font-weight: bold; 
+    text-align: center;
+    margin: 20px 0; 
+    color: #2d2d2d; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+    border-bottom: 2px solid #d4a358; 
+    display: inline-block; 
+    padding-bottom: 5px; 
+}
+
+
+.appointments-grid table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.appointments-grid th, 
+.appointments-grid td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+    font-size: 16px;
+}
+
+.appointments-grid th {
+    background-color: #d4a358;
+    color: white;
+}
+
+.appointments-grid tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.appointments-grid tr:hover {
+    background-color: #f5f5f5;
+}
+
+.appointments-grid button {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 0 5px;
+    transition: background-color 0.3s ease;
+}
+
+.appointments-grid button:hover {
+    opacity: 0.8;
+}
+
+.appointments-grid button:first-child {
+    background-color: #4CAF50;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.appointments-grid button:last-child {
+    background-color: #f44336;
+    color: white;
+}
+
 /* Footer Section */
-/* Footer Styling */
 .footer {
     background: #2d2d2d;
     color: white;
@@ -143,6 +402,15 @@ body, html {
     display: flex;
     justify-content: space-around;
     padding-bottom: 40px;
+    padding-top:40px;
+    border-bottom: 1px solid #444;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 40px;
+    padding-top:40px;
     border-bottom: 1px solid #444;
 }
 
@@ -175,29 +443,6 @@ body, html {
     text-decoration: underline;
 }
 
-/* Newsletter Section */
-.newsletter input {
-    width: 80%;
-    padding: 10px;
-    margin-top: 10px;
-    border-radius: 5px;
-    border: none;
-}
-
-.signup-button {
-    margin-top: 10px;
-    padding: 10px 20px;
-    background: #d4a358;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.signup-button:hover {
-    background: #c4a358;
-}
-
 .footer-bottom-text {
     margin-top: 20px;
     font-size: 14px;
@@ -211,6 +456,12 @@ body, html {
     .footer-links {
         flex-direction: column;
         text-align: center;
+      
     }
 }
 
+.error-message {
+  color: red;
+  font-size: 0.9em;
+  margin-top: 5px;
+}

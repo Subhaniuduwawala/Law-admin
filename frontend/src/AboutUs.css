@@ -9,7 +9,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: rgb(208, 200, 200);
     text-align: center;
 }
 
@@ -27,46 +27,88 @@
     z-index: 1;
 }
 
+.about-content-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #f9f9f9;
+}
+
 .about-content {
-    padding: 40px 20px;
-    text-align: center;
+    width: 80%; /* Adjust this value for width */
+    max-width: 1200px; /* Maximum width of the section */
+    margin: 0 auto;
+    padding: 40px;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
 }
 
 .about-content .container {
     max-width: 800px;
+    width: 100%;
     margin: 0 auto;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
 }
 
+
 .about-content h2 {
-    font-size: 2em;
+    font-size: 2.5em;
+    margin-top: 10px;
     margin-bottom: 10px;
     color: #333;
+    font-weight: bold;
 }
 
 .about-content p {
     font-size: 1.1em;
-    line-height: 1.6;
+    line-height: 1.8;
     margin-bottom: 20px;
-    color: #666;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto;
 }
 
 .about-content ul {
     list-style: none;
     padding: 0;
+    text-align: justify;
 }
 
 .about-content ul li {
     margin: 10px 0;
     font-size: 1.1em;
     color: #444;
+    line-height: 1.6;
+    
 }
 
+.about-content h2 {
+    border-bottom: 2px solid #d4a358;
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+.about-content ul li::before {
+    content: "✔️";
+    color: #d4a358;
+    margin-right: 10px;
+}
+
+
 .team-section {
-    background: #f9f9f9;
+    background: #d1cfcc;
     padding: 40px 20px;
 }
 
-.team-section .container {
+.team-section.container {
     max-width: 1000px;
     margin: 0 auto;
     text-align: center;
@@ -106,6 +148,20 @@
     color: #777;
 }
 
+.testimonials-section {
+    background: #f4f4f9;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.testimonial {
+    background: #caba95;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+} 
+
 .footer {
     background: #222;
     color: white;
@@ -113,3 +169,5 @@
     padding: 20px 0;
     font-size: 0.9em;
 }
+
+

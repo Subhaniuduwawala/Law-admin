@@ -7,6 +7,7 @@ import AboutUs from './AboutUs';
 import Services from './Services';
 import Attorneys from './Attorneys';
 import ContactUs from './ContactUs';
+import Admin from './Admin';
 
 function App() {
   return (
@@ -22,6 +23,8 @@ function App() {
           <Route path='/services' element={<Services />} />
           <Route path='/attorneys' element={<Attorneys />} />
           <Route path='/contact-us' element={<ContactUs />} />
+          <Route path="/admin" element={<Admin />} />
+          
         </Routes>
       </BrowserRouter>
     </>

@@ -159,7 +159,7 @@ function Attorneys() {
         <div className="attorneys-page">
             <Navbar />
             <main>
-                <header className="attorneys-header" style={{ backgroundImage: `url(${img9})` }}>
+                <header className="attorneys-header" style={{ backgroundImage: `url(${img9})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
                     <h1>Our Attorneys</h1>
                     <p>Explore the expertise of our highly qualified team of attorneys.</p>
                 </header>
@@ -182,11 +182,77 @@ function Attorneys() {
                         </div>
                     ))}
                 </section>
-            </main>
-            {/* Footer */}
+                
+                {/* Call to Action Section */}
+                <section className="cta-section">
+                    <div className="cta-container">
+                        <h2>Need Legal Assistance?</h2>
+                        <p>Contact us today to schedule a consultation with our experienced attorneys. We're here to help you navigate your legal challenges.</p>
+                        <button className="cta-button">Schedule a Consultation</button>
+                    </div>
+                </section>
+
+                {/* Testimonials Section */}
+                <section className="testimonials-section">
+                    <div className="container">
+                        <h2>Client Testimonials</h2>
+                        <div className="testimonials-grid">
+                            <div className="testimonial">
+                                <p>"The attorneys at LawAdmin were professional, attentive, and highly effective. They helped me through a challenging legal battle with compassion and expertise."</p>
+                                <h4>- Michael Brown</h4>
+                            </div>
+                            <div className="testimonial">
+                                <p>"I highly recommend LawAdmin for their professionalism and dedication. They made the entire process seamless and kept me informed every step of the way."</p>
+                                <h4>- Lisa Wang</h4>
+                            </div>
+                            <div className="testimonial">
+                                <p>"Their team provided exceptional legal advice and support. They genuinely cared about my case and worked tirelessly to achieve a favorable outcome."</p>
+                                <h4>- Ahmed Khan</h4>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            
             <footer className="footer">
-                <p>&copy; 2025 LawAdmin. All Rights Reserved.</p>
-            </footer>
+                    <div className="footer-container">
+                        <div className="footer-column">
+                            <h3>Our Office</h3>
+                            <p>317 Darley Rd, Colombo 01000, Sri Lanka</p>
+                        </div>
+                        <div className="footer-column">
+                            <h3>Email Us</h3>
+                            <p>info@lawadmin.com</p>
+                        </div>
+                        <div className="footer-column">
+                            <h3>Call Us</h3>
+                            <p>+012 345 6789</p>
+                        </div>
+                    </div>
+                    <div className="footer-links">
+                        <div className="footer-column">
+                            <h3>Popular Links</h3>
+                            <ul>
+                                <li>Home</li>
+                                <li>About</li>
+                                <li>Services</li>
+                                <li>Attorney</li>
+                                <li>Contact</li>
+                            </ul>
+                        </div>
+                        <div className="footer-column">
+                            <h3>Quick Links</h3>
+                            <ul>
+                                <li>FAQs</li>
+                                <li>Help</li>
+                                <li>Terms</li>
+                                <li>Privacy</li>
+                                <li>Site Map</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p className="footer-bottom-text">&copy; 2025 Justice. All Rights Reserved.</p>
+                </footer>
+                </main>
         </div>
     );
 }

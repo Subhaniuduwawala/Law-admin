@@ -1,0 +1,250 @@
+/* Admin Page Styling */
+.admin-page {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    background-color: #f4f5f7;
+}
+
+/* Main Layout */
+.admin-main {
+    display: flex;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Sidebar Styling */
+.admin-sidebar {
+    width: 250px;
+    background: linear-gradient(180deg, #4d4d4d, #575757);
+    padding: 20px;
+    color: white;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.admin-sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.admin-sidebar li {
+    padding: 15px;
+    margin: 10px 0;
+    cursor: pointer;
+    font-size: 18px;
+    background: #d4a358;
+    border-radius: 8px;
+    text-align: center;
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    color: white;
+    font-weight: 500;
+}
+
+.admin-sidebar li.active {
+    background: #ffffff;
+    color: rgb(209, 134, 28);
+    font-weight: bold;
+    border: 2px solid #d4a358;
+}
+
+.admin-sidebar li:hover {
+    background: #c9a057;
+    transform: scale(1.05);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Content Area */
+.admin-content {
+    flex: 1;
+    padding: 30px;
+    background: #f8f9fc;
+}
+
+/* User Form Styling */
+.user-form {
+    margin-top: 20px;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.user-form h3 {
+    font-size: 22px;
+    color: rgb(209, 134, 28);
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #d4a358;
+    padding-bottom: 10px;
+}
+
+.user-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.user-form input,
+.user-form select {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: #f9f9f9;
+    outline: none;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.user-form input:focus,
+.user-form select:focus {
+    border-color: #d4a358;
+    background-color: #ffffff;
+    box-shadow: 0 0 4px rgba(212, 163, 88, 0.5);
+}
+
+.user-form button.submit-btn {
+    background: #100f0e;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.user-form button.submit-btn:hover {
+    background: #c9a057;
+    transform: scale(1.03);
+}
+
+/* Section Content */
+.section-content {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.section-content h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: rgb(209, 134, 28);
+    border-bottom: 2px solid #d4a358;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+/* Table Styling */
+.section-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+}
+
+.section-content table th,
+.section-content table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.section-content table th {
+    background: #d4a358;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.section-content table tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+.section-content table tr:hover {
+    background: rgba(212, 163, 88, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.section-content table td {
+    color: #555;
+}
+
+/* Button Styling */
+.section-content button {
+    background: #000000;
+    color: white;
+    border: none;
+    margin-right: 10px;
+    margin-bottom: 5px;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.section-content button:hover {
+    background: #575757;
+    transform: scale(1.05);
+}
+
+.section-content button:last-child {
+    margin-right: 10
+}
+
+/* List Styling */
+.section-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.section-content ul li {
+    background: #f9f9f9;
+    margin: 10px 0;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    color: #555;
+    font-size: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .admin-sidebar {
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        display: flex;
+        justify-content: space-around;
+        z-index: 1000;
+    }
+
+    .admin-sidebar ul {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .admin-sidebar li {
+        flex: 1;
+        text-align: center;
+        margin: 0;
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    .admin-content {
+        padding: 20px;
+    }
+}

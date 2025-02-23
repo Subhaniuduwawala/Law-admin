@@ -2,12 +2,17 @@ import React from 'react';
 import './Services.css';
 import Navbar from './components/Navbar';
 import img33 from './assets/img33.jpg';
+import img41 from './assets/img41.jpg';
+import img40 from './assets/img40.jpg';
+import img38 from './assets/img38.jpg';
 
-function Services() { 
+
+function Services() {
     const serviceCategories = [
         {
             title: "Criminal Law",
             description: "Our criminal law services specialize in defending individuals accused of crimes and representing clients in criminal cases.",
+            image: img41,
             services: [
                 {
                     name: "Criminal Defense",
@@ -26,6 +31,7 @@ function Services() {
         {
             title: "Family Law",
             description: "We provide compassionate legal support for families navigating challenging times and important decisions.",
+            image: img38,
             services: [
                 {
                     name: "Divorce Proceedings",
@@ -48,6 +54,7 @@ function Services() {
         {
             title: "Corporate Law",
             description: "Our corporate law services help businesses navigate legal challenges, compliance, and transactions.",
+            image: img40,
             services: [
                 {
                     name: "Business Contracts",
@@ -80,23 +87,66 @@ function Services() {
             <main className="services-container">
                 {serviceCategories.map((category, index) => (
                     <section key={index} className="service-category">
-                        <h2>{category.title}</h2>
-                        <p className="category-description">{category.description}</p>
-                        <div className="service-list">
-                            {category.services.map((service, idx) => (
-                                <div key={idx} className="service-item">
-                                    <h3>{service.name}</h3>
-                                    <p>{service.details}</p>
+                        <div className="service-card">
+                            <img src={category.image} alt={category.title} className="service-image" />
+                            <div className="service-content">
+                                <h2>{category.title}</h2>
+                                <p className="category-description">{category.description}</p>
+                                <div className="service-list">
+                                    {category.services.map((service, idx) => (
+                                        <div key={idx} className="service-item">
+                                            <h3>{service.name}</h3>
+                                            <p>{service.details}</p>
+                                            <button className="learn-more">Learn More</button>
+                                        </div>
+                                    ))}
                                 </div>
-                            ))}
+                            </div>
                         </div>
                     </section>
                 ))}
             </main>
+
             {/* Footer */}
             <footer className="footer">
-                <p>&copy; 2025 LawAdmin. All Rights Reserved.</p>
-            </footer>
+                    <div className="footer-container">
+                        <div className="footer-column">
+                            <h3>Our Office</h3>
+                            <p>317 Darley Rd, Colombo 01000, Sri Lanka</p>
+                        </div>
+                        <div className="footer-column">
+                            <h3>Email Us</h3>
+                            <p>info@lawadmin.com</p>
+                        </div>
+                        <div className="footer-column">
+                            <h3>Call Us</h3>
+                            <p>+012 345 6789</p>
+                        </div>
+                    </div>
+                    <div className="footer-links">
+                        <div className="footer-column">
+                            <h3>Popular Links</h3>
+                            <ul>
+                                <li>Home</li>
+                                <li>About</li>
+                                <li>Services</li>
+                                <li>Attorney</li>
+                                <li>Contact</li>
+                            </ul>
+                        </div>
+                        <div className="footer-column">
+                            <h3>Quick Links</h3>
+                            <ul>
+                                <li>FAQs</li>
+                                <li>Help</li>
+                                <li>Terms</li>
+                                <li>Privacy</li>
+                                <li>Site Map</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p className="footer-bottom-text">&copy; 2025 Justice. All Rights Reserved.</p>
+                </footer>
         </div>
     );
 }

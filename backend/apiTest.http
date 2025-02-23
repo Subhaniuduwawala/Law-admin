@@ -3,7 +3,7 @@ Content-Type: application/json
 
 {
   "name": "John Doe",
-  "email": "johndoe@example.com",
+  "email": "johnddoe@example.com",
   "password": "securepassword123"
 }
 
@@ -12,7 +12,7 @@ POST http://localhost:8081/login
 Content-Type: application/json
 
 {
-  "email": "johndoe@example.com",
+  "email": "johnddoe@example.com",
   "password": "securepassword123"
 }
 
