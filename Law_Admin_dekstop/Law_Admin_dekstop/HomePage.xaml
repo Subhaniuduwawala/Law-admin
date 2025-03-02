@@ -1,0 +1,112 @@
+﻿<Page x:Class="Law_Admin_dekstop.HomePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="HomePage"
+      Background="White">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel>
+
+            <!-- Hero Section with Slider -->
+            <Grid>
+                <Image x:Name="HeroImage" Source="C:\Users\Asus\Documents\Project\github\Law_Admin_dekstop\Law_Admin_dekstop\Assets\img32.jpg" Stretch="UniformToFill" Width="1700" Height="700"/>
+                <Grid >
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <TextBlock x:Name="HeroHeading" Text="Welcome to LawAdmin" FontSize="36" FontWeight="Bold" Foreground="White" TextAlignment="Center"/>
+                        <TextBlock x:Name="HeroSubtext" Text="Your trusted partner in legal solutions" FontSize="20" Foreground="White" TextAlignment="Center"/>
+                        <Button Content="Call Us Now" Width="150" Height="40" Background="Orange" Foreground="White" 
+                                FontSize="16" FontWeight="Bold" Margin="0,20,0,0" />
+                    </StackPanel>
+                    <!-- Navigation Arrows -->
+                    <Button Content="&#10094;" Width="30" Height="30" Background="Transparent" Foreground="White" 
+                            FontSize="24" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center"  />
+                    <Button Content="&#10095;" Width="30" Height="30" Background="Transparent" Foreground="White" 
+                            FontSize="24" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Center" 
+                            />
+                </Grid>
+            </Grid>
+
+            <!-- LawAdmin System Section -->
+            <StackPanel Margin="20">
+                <TextBlock Text="How Our LawAdmin System Works" FontSize="32" FontWeight="Bold" TextAlignment="Center" Margin="0,20,0,20"/>
+                <UniformGrid Columns="2" HorizontalAlignment="Center">
+                    <StackPanel Margin="10">
+                        <Image Source="C:\Users\Asus\Documents\Project\github\Law_Admin_dekstop\Law_Admin_dekstop\Assets\img35.jpg" Width="150" Height="150" Stretch="UniformToFill" Margin="0,0,0,10"/>
+                        <TextBlock Text="Step 1: Select Service" FontWeight="Bold" FontSize="18" TextAlignment="Center"/>
+                        <TextBlock Text="Choose from our range of legal services tailored to your needs." TextAlignment="Center" TextWrapping="Wrap"/>
+                    </StackPanel>
+                    <StackPanel Margin="10">
+                        <Image Source="C:\Users\Asus\Documents\Project\github\Law_Admin_dekstop\Law_Admin_dekstop\Assets\img29.jpg" Width="150" Height="150" Stretch="UniformToFill" Margin="0,0,0,10"/>
+                        <TextBlock Text="Step 2: Choose Your Lawyer" FontWeight="Bold" FontSize="18" TextAlignment="Center"/>
+                        <TextBlock Text="Pick the best lawyer for your case from our team of experts." TextAlignment="Center" TextWrapping="Wrap"/>
+                    </StackPanel>
+                    <StackPanel Margin="10">
+                        <Image Source="C:\Users\Asus\Documents\Project\github\Law_Admin_dekstop\Law_Admin_dekstop\Assets\img37.jpg" Width="150" Height="150" Stretch="UniformToFill" Margin="0,0,0,10"/>
+                        <TextBlock Text="Step 3: Schedule Appointment" FontWeight="Bold" FontSize="18" TextAlignment="Center"/>
+                        <TextBlock Text="Book a convenient date and time for your legal consultation." TextAlignment="Center" TextWrapping="Wrap"/>
+                    </StackPanel>
+                    <StackPanel Margin="10">
+                        <Image Source="C:\Users\Asus\Documents\Project\github\Law_Admin_dekstop\Law_Admin_dekstop\Assets\img36.jpg" Width="150" Height="150" Stretch="UniformToFill" Margin="0,0,0,10"/>
+                        <TextBlock Text="Step 4: Confirmation  Reminder" FontWeight="Bold" FontSize="18" TextAlignment="Center"/>
+                        <TextBlock Text="Receive a confirmation email and reminders for your appointment." TextAlignment="Center" TextWrapping="Wrap"/>
+                    </StackPanel>
+                </UniformGrid>
+            </StackPanel>
+
+            <!-- About LawAdmin Section -->
+            <StackPanel Background="#F5F5F5" Margin="20,20,20,20" >
+                <TextBlock Text="LEARN ABOUT US" FontSize="24" FontWeight="Bold" TextAlignment="Center" Foreground="Orange"/>
+                <TextBlock Text="We Provide Reliable And Effective Legal Services" FontSize="32" FontWeight="Bold" TextAlignment="Center" Margin="0,10,0,10"/>
+                <TextBlock Text="At our firm, we are committed to delivering exceptional legal services with integrity and professionalism. Our team of experienced lawyers is dedicated to protecting your rights and achieving the best possible outcomes for your case."
+                           FontSize="16" TextAlignment="Center" TextWrapping="Wrap" Margin="0,0,0,20"/>
+                <Button Content="Learn More" Width="150" Height="40" Background="Orange" Foreground="White" 
+                        FontSize="16" FontWeight="Bold" HorizontalAlignment="Center"/>
+            </StackPanel>
+
+            <!-- Appointment Notice -->
+            <StackPanel Background="#FFF3CD"  Margin="0,10,0,10" >
+                <TextBlock Text="⚠️ Please Note: We operate only on weekdays (Monday to Friday). 
+Appointments are available between 9:00 AM and 6:00 PM only. 
+Kindly avoid booking on Saturdays and Sundays." 
+                           FontSize="14" TextAlignment="Center" TextWrapping="Wrap" Foreground="#856404"/>
+            </StackPanel>
+
+            <!-- Book Appointment Button -->
+            <StackPanel HorizontalAlignment="Center" Margin="20">
+                <Button Content="Book Appointment" Width="200" Height="50" Background="Orange" Foreground="White" 
+            FontSize="18" FontWeight="Bold" HorizontalAlignment="Center"
+            Click="NavigateToAppointmentPage_Click"/>
+            </StackPanel>
+
+            <!-- Existing Appointments Section -->
+            <StackPanel>
+                <TextBlock Text="Your Appointments" FontSize="18" FontWeight="Bold" Foreground="Orange" 
+                           TextAlignment="Center" Margin="0,0,0,10" />
+                <DataGrid x:Name="CustomerAppointmentDataGrid" 
+                          AutoGenerateColumns="False" 
+                          Height="200" 
+                          Margin="10" 
+                          IsReadOnly="True" 
+                          HorizontalAlignment="Center">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="50"/>
+                        <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="100"/>
+                        <DataGridTextColumn Header="Email" Binding="{Binding Email}" Width="100"/>
+                        <DataGridTextColumn Header="Date" Binding="{Binding AppointmentDate}" Width="75"/>
+                        <DataGridTextColumn Header="Time" Binding="{Binding TimeSlot}" Width="75"/>
+                        <DataGridTextColumn Header="Law Type" Binding="{Binding LawType}" Width="100"/>
+                        <DataGridTextColumn Header="Lawyer" Binding="{Binding Lawyer}" Width="100"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+
+                <!-- Edit and Refresh Buttons -->
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10,10,10,40">
+                    <Button Content="Refresh Appointments" Click="RefreshCustomerAppointments_Click" Width="150" 
+                            Background="DarkOrange" Foreground="White" FontSize="14" FontWeight="Medium" Margin="5,0"/>
+                    <Button Content="Edit Appointment" Click="EditAppointmentButton_Click" Width="150" 
+                            Background="Black" Foreground="White" FontSize="14" FontWeight="Bold" BorderThickness="2" BorderBrush="Orange" Margin="5,0"/>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+    </ScrollViewer>
+</Page>

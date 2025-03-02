@@ -1,0 +1,93 @@
+﻿<Page x:Class="Law_Admin_dekstop.Appointment"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Law_Admin_dekstop" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="800"
+      Title="Appointment"
+      Background="#FF3E3B3B">
+
+    <Grid>
+        <!-- Background -->
+        <Grid.Background>
+            <ImageBrush ImageSource="C:\Users\Asus\Documents\Project\github\Law_Admin_dekstop\Law_Admin_dekstop\image2.jpg" Stretch="UniformToFill" />
+        </Grid.Background>
+
+        <!-- Main Content -->
+        <Grid Margin="20">
+            <!-- Back Button -->
+            <Button Width="50" Height="50" Margin="0,10,0,0" Background="Transparent" BorderBrush="Transparent" 
+                    HorizontalAlignment="Left" VerticalAlignment="Top" Click="BackButton_Click">
+                <Image Source="C:\Users\Asus\Documents\Project\github\Law_Admin_dekstop\Law_Admin_dekstop\image3.png" Stretch="Uniform" />
+            </Button>
+
+            <!-- Appointment Form -->
+            <Border Background="#F2F2F2" CornerRadius="10" Padding="20" Width="400" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <StackPanel>
+                    <!-- Title -->
+                    <TextBlock Text="Get An Appointment" FontSize="24" FontWeight="Bold" Foreground="#333333" 
+                               HorizontalAlignment="Center" Margin="0,0,0,20" />
+
+                    <!-- Name -->
+                    <StackPanel Margin="0,20,0,0">
+                        <TextBlock Text="Your Name" Foreground="Gray" FontSize="16" VerticalAlignment="Center" Margin="5,0,0,0" IsHitTestVisible="False" />
+                        <TextBox x:Name="NameTextBox" Width="350" Height="40" FontSize="16" BorderBrush="#CCCCCC" BorderThickness="1" />
+                    </StackPanel>
+                    <!-- Email -->
+                    <StackPanel Margin="0,20,0,0">
+                        <TextBlock Text="Your Email" Foreground="Gray" FontSize="16" VerticalAlignment="Center" Margin="5,0,0,0" IsHitTestVisible="False" />
+                        <TextBox x:Name="EmailTextBox" Width="350" Height="40" FontSize="16" BorderBrush="#CCCCCC" BorderThickness="1" />
+
+                    </StackPanel>
+
+                    <!-- Date and Time -->
+                    <Grid Margin="0,10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions>
+
+                        <DatePicker x:Name="DatePicker" Width="220" Height="40" FontSize="16" Margin="0,0,0,0" />
+
+                        <ComboBox x:Name="TimePicker" Width="110" Height="40" FontSize="16" Grid.Column="1"
+                           BorderBrush="#CCCCCC" BorderThickness="1">
+                            <ComboBoxItem Content="9.00 am - 10.00 am" />
+                            <ComboBoxItem Content="10.00 am - 11.00 am" />
+                            <ComboBoxItem Content="11.00 am - 12.00 pm" />
+                            <ComboBoxItem Content="01.00 pm - 02.00 pm" />
+                            <ComboBoxItem Content="02.00 pm - 03.00 pm" />
+                        </ComboBox>
+                    </Grid>
+
+                    <!-- Law Type -->
+                    <ComboBox x:Name="LawTypeComboBox" Width="350" Height="40" FontSize="16" Margin="0,10"
+                              BorderBrush="#CCCCCC" BorderThickness="1">
+                        <ComboBoxItem Content="Corporate Law" />
+                        <ComboBoxItem Content="Criminal Law" />
+                        <ComboBoxItem Content="Family Law" />
+                        <ComboBoxItem Content="Immigration Law" />
+                        <ComboBoxItem Content="Intellectual Property Law" />
+                    </ComboBox>
+
+                    <!-- Lawyer Selection -->
+                    <ComboBox x:Name="LawyerComboBox" Width="350" Height="40" FontSize="16" Margin="0,10"
+                              BorderBrush="#CCCCCC" BorderThickness="1">
+                        <ComboBoxItem Content="Select a Lawyer" />
+                        <ComboBoxItem Content="John Doe" />
+                        <ComboBoxItem Content="Jane Smith" />
+                        <ComboBoxItem Content="Michael Johnson" />
+                        <ComboBoxItem Content="Emily Davis" />
+                    </ComboBox>
+
+                    <!-- Submit Button -->
+                    <Button Content="Get An Appointment" Width="350" Height="50" FontSize="16" FontWeight="Bold"
+                            Background="#FFA500" Foreground="White" BorderThickness="0" Cursor="Hand" Margin="0,20,0,0"
+                            Click="GetAppointmentButton_Click" />
+                </StackPanel>
+            </Border>
+        </Grid>
+    </Grid>
+</Page>
