@@ -3254,11 +3254,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Asus\\Documents\\Project\\github\\Law_Admin_dekstop\\Law_Admin_dekstop\\Law_Admin_dekstop.csproj",
+      "projectUniqueName": "C:\\Users\\Asus\\Documents\\Project\\github\\Law-admin\\Law-admin\\Law_Admin_dekstop\\Law-admin\\Law_Admin_dekstop\\Law_Admin_dekstop\\Law_Admin_dekstop.csproj",
       "projectName": "Law_Admin_dekstop",
-      "projectPath": "C:\\Users\\Asus\\Documents\\Project\\github\\Law_Admin_dekstop\\Law_Admin_dekstop\\Law_Admin_dekstop.csproj",
+      "projectPath": "C:\\Users\\Asus\\Documents\\Project\\github\\Law-admin\\Law-admin\\Law_Admin_dekstop\\Law-admin\\Law_Admin_dekstop\\Law_Admin_dekstop\\Law_Admin_dekstop.csproj",
       "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Asus\\Documents\\Project\\github\\Law_Admin_dekstop\\Law_Admin_dekstop\\obj\\",
+      "outputPath": "C:\\Users\\Asus\\Documents\\Project\\github\\Law-admin\\Law-admin\\Law_Admin_dekstop\\Law-admin\\Law_Admin_dekstop\\Law_Admin_dekstop\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
