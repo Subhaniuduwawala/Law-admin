@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Law_Admin_dekstop")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6b9ac3db1ce17169a0cd753ddde1fa97aa048b72")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f81966c3bf0ff2f6e2bf2ef379cb3406f2242125")]
 [assembly: System.Reflection.AssemblyProductAttribute("Law_Admin_dekstop")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Law_Admin_dekstop")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
